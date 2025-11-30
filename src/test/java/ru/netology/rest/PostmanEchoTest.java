@@ -43,14 +43,14 @@ public class PostmanEchoTest {
 
     @Test
     void shouldSubmitReq() {
-     //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
+        //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Екатерина Голубева");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-        }
+    }
 
     @Test
     void shouldSubmitReq2() {
@@ -62,5 +62,27 @@ public class PostmanEchoTest {
         String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
+
+    @Test
+    void shouldSubmitReq3() {
+        //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Василий Ильин");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
+        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
+
+//    @Test
+//    void shouldSubmitReq4() {
+//        //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
+//        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Алёна Ильина");
+//        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
+//        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
+//        driver.findElement(By.cssSelector("button")).click();
+//        String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
+//        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+//    }
+}
 
