@@ -74,15 +74,15 @@ public class PostmanEchoTest {
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
-//    @Test
-//    void shouldSubmitReq4() {
-//        //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
-//        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Алёна Ильина");
-//        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
-//        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
-//        driver.findElement(By.cssSelector("button")).click();
-//        String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
-//        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-//    }
+    @Test
+    void shouldSubmitReq4() {
+        //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Алёна Ильина");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
+        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub")).getText();
+        assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", text.trim());
+    }
 }
 
