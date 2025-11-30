@@ -30,9 +30,7 @@ public class PostmanEchoTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = WebDriverManager.chromedriver()
-                .capabilities(options)
-                .create();
+        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999");
     }
@@ -52,7 +50,17 @@ public class PostmanEchoTest {
         driver.findElement(By.cssSelector("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-
         }
+
+    @Test
+    void shouldSubmitReq2() {
+        //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Екатерина-Ольга Голубева");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
+        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+    }
     }
 
