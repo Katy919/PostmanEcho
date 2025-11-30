@@ -29,10 +29,10 @@ public class PostmanEchoTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new ChromeDriver();
 
-        driver.get("http://localhost:9999/");
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
