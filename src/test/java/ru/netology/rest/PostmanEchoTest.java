@@ -30,7 +30,9 @@ public class PostmanEchoTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        driver = WebDriverManager.chromedriver()
+                .capabilities(options)
+                .create();
 
         driver.get("http://localhost:9999");
     }
