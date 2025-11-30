@@ -66,7 +66,7 @@ public class PostmanEchoTest {
     @Test
     void shouldSubmitReq3() {
         //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
-        driver.findElement(By.cssSelector("[data-test-id='name'] ")).sendKeys("Василий Ильин");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Василий Ильин");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79811234567");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
