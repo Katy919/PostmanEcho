@@ -143,7 +143,7 @@ public class PostmanEchoNegativTest {
     @Test
     void shouldSubmitNegativeReq11() {
         //   WebElement form = driver.findElement(By.cssSelector("[data-test-id='callback-form']"));
-        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Екатерина Голубева");
+        driver.findElement(By.cssSelector("[data-test-id='name' input")).sendKeys("Екатерина Голубева");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+7911");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
